@@ -13,7 +13,18 @@ export const Top = (props) => {
   console.log(props.setStarted);
   return (
     <>
-      <Helmet>
+      <Helmet
+        title='「人間失格度」診断'
+        meta={[
+            { name: 'description', content: '太宰治の「人間失格」に、あなたの性格がどれほどマッチしているかを診断します。'},
+            { property: 'og:title', content: '「人間失格度」診断' },
+            { property: 'og:type', content: 'blog' },
+            { property: 'og:url', content:  'https://no-longer-human.herokuapp.com/'},
+            { property: 'og:image', content: {imgUrl} },
+            { property: 'og:description', content: '太宰治の「人間失格」に、あなたの性格がどれほどマッチしているかを診断します。' },
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: '@gustave_studio' },
+        ]}>
         <style>{`
         body {
           background-position: center center;
