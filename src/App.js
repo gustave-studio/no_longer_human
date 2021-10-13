@@ -7,10 +7,7 @@ import { CSSTransition } from "react-transition-group";
 import { BrowserRouter, Route } from 'react-router-dom';
 
 export default function App() {
-  const [started, setStarted] = useState(false);
-
   const [num, setNum] = useState(0);
-  const ended = num < 3;
 
   const [resultOfQuestion1, setResultOfQuestion1] = useState(false);
   const [resultOfQuestion2, setResultOfQuestion2] = useState(false);
@@ -82,19 +79,6 @@ export default function App() {
     );
   };
 
-  // if (!started) {
-  //   return <Top setStarted={setStarted} />;
-  // } else if (ended) {
-  //   return (
-  //     <div className="App">
-  //       <h1>「人間失格度」診断</h1>
-  //       {question()}
-  //     </div>
-  //   );
-  // } else {
-  //   return <Result results={results} />;
-  // }
-
   return (
     <BrowserRouter>
       <Route exact path="/">
@@ -106,7 +90,7 @@ export default function App() {
            {question()}
          </div>
       </Route>
-      <Route path="/result_1">
+      <Route path="/result">
         <Result results={results} />
       </Route>
     </BrowserRouter>

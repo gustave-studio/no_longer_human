@@ -2,6 +2,7 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@material-ui/core/Grid";
+import { Link } from "react-router-dom";
 
 export const SelectButton = (props) => {
   const { num, setNum, setResult, setShowMessage } = props;
@@ -14,6 +15,63 @@ export const SelectButton = (props) => {
     setResult(true);
   };
 
+  const ButtonToNextQuestion = () => {
+    return (
+      <>
+        <Button
+          variant="contained"
+          onClick={() => {
+            setResultButton();
+            nextButton();
+            setShowMessage(false);
+          }}
+        >
+          はい
+        </Button>
+        <br />
+        <Button
+          variant="outlined"
+          onClick={() => {
+            nextButton();
+            setShowMessage(false);
+          }}
+        >
+          いいえ
+        </Button>
+      </>
+    )
+  }
+
+  const ButtonToResult = () => {
+    return (
+      <>
+        <Button
+          variant="contained"
+          onClick={() => {
+            setResultButton();
+            setShowMessage(false);
+          }}
+          component={Link}
+          to="/result"
+        >
+          はい
+        </Button>
+        <br />
+        <Button
+          variant="outlined"
+          onClick={() => {
+            nextButton();
+            setShowMessage(false);
+          }}
+          component={Link}
+          to="/result"
+        >
+          いいえ
+        </Button>
+      </>
+    )
+  }
+ 
   return (
     <>
       <Grid container>
@@ -23,26 +81,7 @@ export const SelectButton = (props) => {
           <div>
             <Stack spacing={2} direction="row">
               <Grid item container direction="column" spacing={0}>
-                <Button
-                  variant="contained"
-                  onClick={() => {
-                    setResultButton();
-                    nextButton();
-                    setShowMessage(false);
-                  }}
-                >
-                  はい
-                </Button>
-                <br />
-                <Button
-                  variant="outlined"
-                  onClick={() => {
-                    nextButton();
-                    setShowMessage(false);
-                  }}
-                >
-                  いいえ
-                </Button>
+                { (num == 2) ? ButtonToResult() : ButtonToNextQuestion() }
               </Grid>
             </Stack>
           </div>
@@ -52,4 +91,4 @@ export const SelectButton = (props) => {
       </Grid>
     </>
   );
-};
+}
