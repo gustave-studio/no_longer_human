@@ -2,9 +2,9 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Grid from "@material-ui/core/Grid";
+import { Link } from "react-router-dom";
 
 export const StartButton = (props) => {
-  console.log(props);
   return (
     <>
       <Grid container>
@@ -16,9 +16,8 @@ export const StartButton = (props) => {
                 <Button
                   style={{ backgroundColor: "#ff1493", fontSize: "20px" }}
                   variant="contained"
-                  onClick={() => {
-                    props.setStarted(true);
-                  }}
+                  component={Link}
+                  to="/questions"
                 >
                   診断開始
                 </Button>

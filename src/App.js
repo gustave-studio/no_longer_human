@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Top } from "./components/Top";
 import { Question } from "./components/Question";
 import { Result } from "./components/Result";
-// import { Result } from "./components/Result";
 import { CSSTransition } from "react-transition-group";
+import { BrowserRouter, Route } from 'react-router-dom';
 
 export default function App() {
   const [started, setStarted] = useState(false);
@@ -82,17 +82,36 @@ export default function App() {
     );
   };
 
-  if (!started) {
-    return <Top setStarted={setStarted} />;
-  } else if (ended) {
-    return (
-      <div className="App">
-        <h1>「人間失格度」診断</h1>
-        {question()}
-      </div>
-    );
-  } else {
-    return <Result results={results} />;
-  }
+  // if (!started) {
+  //   return <Top setStarted={setStarted} />;
+  // } else if (ended) {
+  //   return (
+  //     <div className="App">
+  //       <h1>「人間失格度」診断</h1>
+  //       {question()}
+  //     </div>
+  //   );
+  // } else {
+  //   return <Result results={results} />;
+  // }
+
+  return (
+    <BrowserRouter>
+      <Route exact path="/">
+        <Top />
+      </Route>
+      <Route path="/questions">
+         <div className="App">
+           <h1>「人間失格度」診断</h1>
+           {question()}
+         </div>
+      </Route>
+      <Route path="/result_1">
+        <Result results={results} />
+      </Route>
+    </BrowserRouter>
+  )
+
+
 }
 
