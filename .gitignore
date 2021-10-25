@@ -26,3 +26,5 @@ yarn-error.log*
 /firebase.json
 
 /functions/index.html
+
+.vscode
