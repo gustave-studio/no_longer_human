@@ -1,20 +1,20 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Card from "@material-ui/core/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { StartButton } from "./StartButton";
+import Card from '@material-ui/core/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import StartButton from './StartButton';
 
-export const Top = (props) => {
-  const imgUrl =
-    "https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png";
+const Top = () => {
+  const imgUrl = 'https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png';
 
-  console.log(props.setStarted);
   return (
     <>
-      <Helmet>
-        <style>{`
+      <HelmetProvider>
+        <Helmet>
+          <style>
+            {`
         body {
           background-position: center center;
           background-image: url(${imgUrl});
@@ -22,8 +22,11 @@ export const Top = (props) => {
           background-size: cover;
           background-repeat: no-repeat;
         }
-    `}</style>
-      </Helmet>
+    `}
+
+          </style>
+        </Helmet>
+      </HelmetProvider>
       <div className="container">
         <h1>
           「人間失格度」
@@ -35,20 +38,22 @@ export const Top = (props) => {
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
               <Typography variant="h5" component="div">
-                <p>
+                <div>
                   太宰治の「人間失格」に、どの位あなたの性格が一致しているかを診断します。
                   <br />
                   <br />
                   所用時間1分
-                </p>
+                </div>
               </Typography>
             </CardContent>
           </Card>
         </div>
         <div className="startButton">
-          <StartButton setStarted={props.setStarted} />
+          <StartButton setStarted />
         </div>
       </div>
     </>
   );
 };
+
+export default Top;

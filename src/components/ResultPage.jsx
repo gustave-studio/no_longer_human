@@ -1,25 +1,28 @@
-import React from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { Helmet } from 'react-helmet';
 import {
   FacebookShareButton,
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
   LineShareButton,
-  LineIcon
-} from "react-share";
+  LineIcon,
+} from 'react-share';
+import PropTypes from 'prop-types';
+import Results from '../Results';
 
-export const ResultPage = (props) => {
-  const imgUrl =
-    "https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png";
+const ResultPage = (props) => {
+  const { result } = props;
+  const imgUrl = 'https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png';
 
   return (
     <>
       <Helmet>
-        <style>{`
+        <style>
+          {`
         body {
           background-position: center center;
           background-image: url(${imgUrl});
@@ -27,30 +30,32 @@ export const ResultPage = (props) => {
           background-size: cover;
           background-repeat: no-repeat;
         }
-    `}</style>
+    `}
+
+        </style>
       </Helmet>
       <div className="container">
-        <h1>人間失格度 0%</h1>
-        <h2>「御伽草子」級</h2>
+        <h1>{Results[result].title}</h1>
+        <h2>{Results[result].class}</h2>
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
             <Typography variant="h5" component="div">
-              <p>説明文</p>
+              <div>{Results[result].containts}</div>
             </Typography>
           </CardContent>
           <FacebookShareButton
-            url={[""]}
-            quote={[""]}
+            url={['']}
+            quote={['']}
           >
             <FacebookIcon size={50} round />
           </FacebookShareButton>
           <TwitterShareButton
-            url={[""]}
-            title={[""]}
+            url={['']}
+            title={['']}
           >
             <TwitterIcon size={50} round />
           </TwitterShareButton>
-          <LineShareButton url={[""]}>
+          <LineShareButton url={['']}>
             <LineIcon size={50} round />
           </LineShareButton>
         </Card>
@@ -58,3 +63,9 @@ export const ResultPage = (props) => {
     </>
   );
 };
+
+ResultPage.propTypes = {
+  result: PropTypes.string.isRequired,
+};
+
+export default ResultPage;
