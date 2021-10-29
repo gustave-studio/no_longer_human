@@ -44,18 +44,18 @@ const ResultPage = (props) => {
             </Typography>
           </CardContent>
           <FacebookShareButton
-            url={['']}
+            url={`http://localhost:3000/${result}`}
             quote={['']}
           >
             <FacebookIcon size={50} round />
           </FacebookShareButton>
           <TwitterShareButton
-            url={['']}
+            url={`http://localhost:3000/${result}`}
             title={['']}
           >
             <TwitterIcon size={50} round />
           </TwitterShareButton>
-          <LineShareButton url={['']}>
+          <LineShareButton url={`http://localhost:3000/${result}`}>
             <LineIcon size={50} round />
           </LineShareButton>
         </Card>
