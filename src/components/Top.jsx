@@ -29,9 +29,7 @@ const Top = () => {
       </HelmetProvider>
       <div className="container">
         <h1>
-          「人間失格度」
-          <br />
-          診断
+          「人間失格度」診断
         </h1>
 
         <div className="explanation">
