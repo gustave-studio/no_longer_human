@@ -18,23 +18,31 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import Results from '../Results';
 
+const redirect = () => {
+  window.location.href = '/';
+};
+
 const ResultPage = (props) => {
-  const { result } = props;
+  const { result, started } = props;
   const imgUrl = 'https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png';
+
+  if (!started) {
+    redirect();
+  }
 
   return (
     <>
       <Helmet>
         <style>
           {`
-        body {
-          background-position: center center;
-          background-image: url(${imgUrl});
-          background-attachment: fixed;
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-    `}
+          body {
+            background-position: center center;
+            background-image: url(${imgUrl});
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+      `}
 
         </style>
       </Helmet>
@@ -93,6 +101,7 @@ const ResultPage = (props) => {
 
 ResultPage.propTypes = {
   result: PropTypes.string.isRequired,
+  started: PropTypes.bool.isRequired,
 };
 
 export default ResultPage;

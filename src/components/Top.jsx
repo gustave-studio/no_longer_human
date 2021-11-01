@@ -4,9 +4,11 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Card from '@material-ui/core/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
 import StartButton from './StartButton';
 
-const Top = () => {
+const Top = (props) => {
+  const { setStarted } = props;
   const imgUrl = 'https://no-longer-human.s3.ap-northeast-1.amazonaws.com/result1.png';
 
   return (
@@ -51,11 +53,15 @@ const Top = () => {
           </Card>
         </div>
         <div className="startButton">
-          <StartButton setStarted />
+          <StartButton setStarted={setStarted} />
         </div>
       </div>
     </>
   );
+};
+
+Top.propTypes = {
+  setStarted: PropTypes.func.isRequired,
 };
 
 export default Top;

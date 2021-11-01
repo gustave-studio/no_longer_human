@@ -14,7 +14,6 @@ const Questions = (props) => {
   const trueOfAnswers = answers.filter((result) => result === true).length;
   // setNumberOfTrue(trueOfAnswers);
 
-  console.log(trueOfAnswers);
   const history = useHistory();
   const diagnose = () => {
     switch (trueOfAnswers) {
