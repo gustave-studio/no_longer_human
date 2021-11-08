@@ -1,98 +1,91 @@
-import "./styles.css";
-import React, { useState } from "react";
-import { Top } from "./components/Top";
-import { Question } from "./components/Question";
-import { Result } from "./components/Result";
-// import { Result } from "./components/Result";
-import { CSSTransition } from "react-transition-group";
+import './styles.css';
+import React, { useState, useMemo } from 'react';
+
+import { BrowserRouter, Route } from 'react-router-dom';
+import Top from './components/Top';
+
+import Questions from './components/Questions';
+import ResultPage from './components/ResultPage';
+// import Diagnose from './components/Diagnose';
 
 export default function App() {
+  const [num, setNum] = useState(0);
+
   const [started, setStarted] = useState(false);
 
-  const [num, setNum] = useState(0);
-  const ended = num < 3;
+  const [answerOfQuestion1, setAnswerOfQuestion1] = useState(false);
+  const [answerOfQuestion2, setAnswerOfQuestion2] = useState(false);
+  const [answerOfQuestion3, setAnswerOfQuestion3] = useState(false);
+  const [answerOfQuestion4, setAnswerOfQuestion4] = useState(false);
 
-  const [resultOfQuestion1, setResultOfQuestion1] = useState(false);
-  const [resultOfQuestion2, setResultOfQuestion2] = useState(false);
-  const [resultOfQuestion3, setResultOfQuestion3] = useState(false);
+  const answers = useMemo(() => [
+    answerOfQuestion1,
+    answerOfQuestion2,
+    answerOfQuestion3,
+    answerOfQuestion4,
+  ], [answerOfQuestion1, answerOfQuestion2, answerOfQuestion3, answerOfQuestion4]);
 
-  const results = [resultOfQuestion1, resultOfQuestion2, resultOfQuestion3];
-
-  const setResults = [
-    setResultOfQuestion1,
-    setResultOfQuestion2,
-    setResultOfQuestion3
+  const setAnswers = [
+    setAnswerOfQuestion1,
+    setAnswerOfQuestion2,
+    setAnswerOfQuestion3,
+    setAnswerOfQuestion4,
   ];
 
-  const text = ["長い小説を読める", "ユーモアがある小説に惹かれる", "テスト"];
+  const questions = ['自分は繊細な性格で、人や社会に不信感がある', 'お酒が好きで人と飲むのが好きだ。', '人と比べて恋愛経験が多い方だ。', '自分の性格とは違うキャラを人前で演じてしまうことがある。'];
   const [showMessage1, setShowMessage1] = useState(true);
   const [showMessage2, setShowMessage2] = useState(false);
   const [showMessage3, setShowMessage3] = useState(false);
+  const [showMessage4, setShowMessage4] = useState(false);
 
-  const question = () => {
-    return (
-      <>
-        <CSSTransition
-          in={showMessage1}
-          timeout={300}
-          classNames="question"
-          unmountOnExit
-          onExited={() => setShowMessage2(true)}
-        >
-          <Question
+  const showMessages = [
+    showMessage1,
+    showMessage2,
+    showMessage3,
+    showMessage4,
+  ];
+
+  const setShowMessages = [
+    setShowMessage1,
+    setShowMessage2,
+    setShowMessage3,
+    setShowMessage4,
+  ];
+
+  return (
+    <BrowserRouter>
+      <Route exact path="/">
+        <Top setStarted={setStarted} />
+      </Route>
+      <Route path="/questions">
+        <div className="App">
+          <h1>「人間失格度」診断</h1>
+          <Questions
+            showMessages={showMessages}
+            setShowMessages={setShowMessages}
             num={num}
             setNum={setNum}
-            text={text[0]}
-            setResult={setResults[0]}
-            setShowMessage={setShowMessage1}
-          ></Question>
-        </CSSTransition>
-
-        <CSSTransition
-          in={showMessage2}
-          timeout={300}
-          classNames="question"
-          unmountOnExit
-          onExited={() => setShowMessage3(true)}
-        >
-          <Question
-            num={num}
-            setNum={setNum}
-            text={text[1]}
-            setResult={setResults[1]}
-            setShowMessage={setShowMessage2}
-          ></Question>
-        </CSSTransition>
-
-        <CSSTransition
-          in={showMessage3}
-          timeout={300}
-          classNames="question"
-          unmountOnExit
-        >
-          <Question
-            num={num}
-            setNum={setNum}
-            text={text[2]}
-            setResult={setResults[2]}
-            setShowMessage={setShowMessage3}
-          ></Question>
-        </CSSTransition>
-      </>
-    );
-  };
-
-  if (!started) {
-    return <Top setStarted={setStarted} />;
-  } else if (ended) {
-    return (
-      <div className="App">
-        <h1>「人間失格度」診断</h1>
-        {question()}
-      </div>
-    );
-  } else {
-    return <Result results={results} />;
-  }
+            questions={questions}
+            answers={answers}
+            setAnswers={setAnswers}
+          />
+        </div>
+      </Route>
+      <Route path="/result1">
+        <ResultPage result="result1" started={started} />
+      </Route>
+      <Route path="/result2">
+        <ResultPage result="result2" started={started} />
+      </Route>
+      <Route path="/result3">
+        <ResultPage result="result3" started={started} />
+      </Route>
+      <Route path="/result4">
+        <ResultPage result="result4" started={started} />
+      </Route>
+      <Route path="/result5">
+        <ResultPage result="result5" started={started} />
+      </Route>
+    </BrowserRouter>
+  );
 }
-
