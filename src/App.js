@@ -6,7 +6,6 @@ import Top from './components/Top';
 
 import Questions from './components/Questions';
 import ResultPage from './components/ResultPage';
-// import Diagnose from './components/Diagnose';
 
 export default function App() {
   const [num, setNum] = useState(0);
@@ -17,32 +16,57 @@ export default function App() {
   const [answerOfQuestion2, setAnswerOfQuestion2] = useState(false);
   const [answerOfQuestion3, setAnswerOfQuestion3] = useState(false);
   const [answerOfQuestion4, setAnswerOfQuestion4] = useState(false);
+  const [answerOfQuestion5, setAnswerOfQuestion5] = useState(false);
+  const [answerOfQuestion6, setAnswerOfQuestion6] = useState(false);
 
   const answers = useMemo(() => [
     answerOfQuestion1,
     answerOfQuestion2,
     answerOfQuestion3,
     answerOfQuestion4,
-  ], [answerOfQuestion1, answerOfQuestion2, answerOfQuestion3, answerOfQuestion4]);
+    answerOfQuestion5,
+    answerOfQuestion6,
+  ], [
+    answerOfQuestion1,
+    answerOfQuestion2,
+    answerOfQuestion3,
+    answerOfQuestion4,
+    answerOfQuestion5,
+    answerOfQuestion6,
+  ]);
 
   const setAnswers = [
     setAnswerOfQuestion1,
     setAnswerOfQuestion2,
     setAnswerOfQuestion3,
     setAnswerOfQuestion4,
+    setAnswerOfQuestion5,
+    setAnswerOfQuestion6,
   ];
 
-  const questions = ['自分は繊細な性格で、人や社会に不信感がある', 'お酒が好きで人と飲むのが好きだ。', '人と比べて恋愛経験が多い方だ。', '自分の性格とは違うキャラを人前で演じてしまうことがある。'];
+  const questions = [
+    '自分は繊細な性格で、人や社会に不信感がある。',
+    '自分の性格とは違うキャラを人前で演じてしまうことがある。',
+    'お酒が大好き。絶対やめられない。',
+    '人と比べて恋愛経験が多い方だ。',
+    '自分に自信が持てず、つい自己否定してしまう。',
+    '周りが見えなくなって、1つのことに没頭してしまうことがよくある。',
+  ];
+
   const [showMessage1, setShowMessage1] = useState(true);
   const [showMessage2, setShowMessage2] = useState(false);
   const [showMessage3, setShowMessage3] = useState(false);
   const [showMessage4, setShowMessage4] = useState(false);
+  const [showMessage5, setShowMessage5] = useState(false);
+  const [showMessage6, setShowMessage6] = useState(false);
 
   const showMessages = [
     showMessage1,
     showMessage2,
     showMessage3,
     showMessage4,
+    showMessage5,
+    showMessage6,
   ];
 
   const setShowMessages = [
@@ -50,6 +74,8 @@ export default function App() {
     setShowMessage2,
     setShowMessage3,
     setShowMessage4,
+    setShowMessage5,
+    setShowMessage6,
   ];
 
   return (
