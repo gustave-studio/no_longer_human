@@ -3,87 +3,91 @@
     text-align: center;
   }
   
-  .App .question-enter {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  
-  .App .question-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
-  }
-  
-  .App .question-exit {
-    opacity: 1;
-  }
-  
-  .App .question-exit-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
-  }
-  .container {
-    margin-top: 200px;
-  }
-  
-  .container h1 {
-    width: 100%;
-    color: #ffffff;
-    font-size: 64px;
-    text-align: center;
-    margin-bottom: 100px;
-    /* position: absolute; */
-  }
-  
-  .container h2 {
-    width: 100%;
-    color: #ffffff;
-    font-size: 36px;
-    text-align: center;
-    /* position: absolute; */
-  }
+.App .question-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
 
-  .container button {
-    margin: 5px;
-  }
-  
-  .explanation {
-    width: 70%;
-    /* position: absolute; */
-  
-    margin: 0% 15%;
-  }
-  
-  .startButton {
-    width: 100%;
-    /* position: absolute; */
-    bottom: 10%;
-    margin: 5% 0%;
-  }
-  
-  .Button {
-    font-size: 30px;
-  }
-  
-  body::before {
-    content: "";
-    width: 100%;
-  
-    /* position: absolute; */
-  
-    top: 0;
-  
-    right: 0;
-  
-    bottom: 0;
-  
-    left: 0;
-  
-    background-color: rgb(14, 168, 14);
-  
-    opacity: 0.5;
-  
-    display: block;
-  }
+.App .question-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.App .question-exit {
+  opacity: 1;
+}
+
+.App .question-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+.container {
+  margin-top: 200px;
+}
+
+.container h1 {
+  width: 100%;
+  color: #ffffff;
+  font-size: 64px;
+  text-align: center;
+  margin-bottom: 100px;
+  /* position: absolute; */
+}
+
+.container h2 {
+  width: 100%;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  /* position: absolute; */
+}
+
+.container button {
+  margin: 5px;
+}
+
+.explanation {
+  width: 70%;
+  /* position: absolute; */
+
+  margin: 0% 15%;
+}
+
+.startButton {
+  width: 100%;
+  /* position: absolute; */
+  bottom: 10%;
+  margin: 5% 0%;
+}
+
+.Button {
+  font-size: 30px;
+}
+
+.body {
+  background-color: rgb(14, 168, 14);
+}
+
+body::before {
+  content: "";
+  width: 100%;
+
+  /* position: absolute; */
+
+  top: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  left: 0;
+
+  background-color: rgb(14, 168, 14);
+
+  opacity: 0.5;
+
+  display: block;
+}
   
