@@ -12,10 +12,6 @@ import {
   LineIcon,
 } from 'react-share';
 import PropTypes from 'prop-types';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import Grid from '@material-ui/core/Grid';
-import { Link } from 'react-router-dom';
 import Results from '../Results';
 
 const redirect = () => {
@@ -25,6 +21,12 @@ const redirect = () => {
 const ResultPage = (props) => {
   const { result, started } = props;
   const imgUrl = 'https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png';
+  const texts = Results[result].containts.split('\n').map((item) => (
+    <p key={item}>
+      {item}
+      <br />
+    </p>
+  ));
 
   if (!started) {
     redirect();
@@ -53,7 +55,7 @@ const ResultPage = (props) => {
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
               <Typography variant="h5" component="div">
-                <div>{Results[result].containts}</div>
+                <div>{texts}</div>
               </Typography>
             </CardContent>
             <FacebookShareButton
@@ -75,26 +77,6 @@ const ResultPage = (props) => {
         </div>
       </div>
       <br />
-      <Grid container>
-        <Grid item xs={3} />
-        <Grid item xs={6}>
-          <div>
-            <Stack spacing={2} direction="row">
-              <Grid item container direction="column" spacing={0}>
-                <Button
-                  style={{ backgroundColor: '#ff1493', fontSize: '20px' }}
-                  variant="contained"
-                  component={Link}
-                  to="/"
-                >
-                  診断トップへ
-                </Button>
-              </Grid>
-            </Stack>
-          </div>
-        </Grid>
-        <Grid item xs={3} />
-      </Grid>
     </>
   );
 };
