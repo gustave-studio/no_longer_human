@@ -10,8 +10,6 @@ import ResultPage from './components/ResultPage';
 export default function App() {
   const [num, setNum] = useState(0);
 
-  const [started, setStarted] = useState(false);
-
   const [answerOfQuestion1, setAnswerOfQuestion1] = useState(false);
   const [answerOfQuestion2, setAnswerOfQuestion2] = useState(false);
   const [answerOfQuestion3, setAnswerOfQuestion3] = useState(false);
@@ -81,7 +79,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Route exact path="/">
-        <Top setStarted={setStarted} />
+        <Top />
       </Route>
       <Route path="/questions">
         <div className="App">
@@ -103,19 +101,19 @@ export default function App() {
         </div>
       </Route>
       <Route path="/result1">
-        <ResultPage result="result1" started={started} />
+        <ResultPage result="result1" />
       </Route>
       <Route path="/result2">
-        <ResultPage result="result2" started={started} />
+        <ResultPage result="result2" />
       </Route>
       <Route path="/result3">
-        <ResultPage result="result3" started={started} />
+        <ResultPage result="result3" />
       </Route>
       <Route path="/result4">
-        <ResultPage result="result4" started={started} />
+        <ResultPage result="result4" />
       </Route>
       <Route path="/result5">
-        <ResultPage result="result5" started={started} />
+        <ResultPage result="result5" />
       </Route>
     </BrowserRouter>
   );
