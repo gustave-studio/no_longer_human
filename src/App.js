@@ -47,7 +47,7 @@ export default function App() {
   const questions = [
     '自分は繊細な性格で、人や社会に不信感がある。',
     '自分の性格とは違うキャラを人前で演じてしまうことがある。',
-    'お酒が大好き。絶対やめられない。',
+    'お酒が大好き。絶対にやめられない。',
     '人と比べて恋愛経験が多い方だ。',
     '自分に自信が持てず、つい自己否定してしまう。',
     '周りが見えなくなって、1つのことに没頭してしまうことがよくある。',
@@ -85,7 +85,12 @@ export default function App() {
       </Route>
       <Route path="/questions">
         <div className="App">
-          <h1>「人間失格度」診断</h1>
+          <h1>
+            人間失格度から見る
+            <br />
+            太宰治診断
+          </h1>
+
           <Questions
             showMessages={showMessages}
             setShowMessages={setShowMessages}

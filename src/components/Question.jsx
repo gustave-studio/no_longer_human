@@ -20,12 +20,12 @@ const Question = (props) => {
           <div className="question">
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
-                <Typography variant="h5" component="span">
+                <Typography variant="h4" component="span">
                   質問
                   {questionNumber}
                 </Typography>
                 <Typography variant="body2" component="span">
-                  <div>{text}</div>
+                  <p>{text}</p>
                   <br />
                   <SelectButton
                     num={num}

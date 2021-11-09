@@ -9,7 +9,6 @@ import StartButton from './StartButton';
 
 const Top = (props) => {
   const { setStarted } = props;
-  const imgUrl = 'https://no-longer-human.s3.ap-northeast-1.amazonaws.com/result1.png';
 
   return (
     <>
@@ -19,7 +18,7 @@ const Top = (props) => {
             {`
         body {
           background-position: center center;
-          background-image: url(${imgUrl});
+          background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
           background-attachment: fixed;
           background-size: cover;
           background-repeat: no-repeat;
@@ -31,22 +30,25 @@ const Top = (props) => {
       </HelmetProvider>
       <div className="container">
         <h1>
-          「人間失格度」
+          人間失格度から見る
           <br />
-          診断
+          太宰治診断
         </h1>
+        <p>Version 1.0.0 Tsuneko</p>
 
         <div className="explanation">
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
               <Typography variant="h5" component="div">
                 <div>
-                  太宰治の「人間失格」に、どの位あなたの性格が一致しているかを診断します。
+                  「人間失格」の主人公である大庭葉蔵に、あなたの性格がどの位似ているかを診断した人間失格度を出します。
+                  <br />
+                  人間失格度に応じた太宰治のおすすめ小説も出て来るので、ぜひ遊んでみて下さい！
                   <br />
                   <br />
-                  全4問
+                  全6問
                   <br />
-                  所用時間30秒
+                  所用時間1分
                 </div>
               </Typography>
             </CardContent>
