@@ -15,8 +15,8 @@ const Question = (props) => {
   return (
     <>
       <Grid container>
-        <Grid item xs={3} />
-        <Grid item xs={6}>
+        <Grid item xs={1} />
+        <Grid item xs={10}>
           <div className="question">
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
@@ -38,7 +38,7 @@ const Question = (props) => {
             </Card>
           </div>
         </Grid>
-        <Grid item xs={3} />
+        <Grid item xs={1} />
       </Grid>
     </>
   );
