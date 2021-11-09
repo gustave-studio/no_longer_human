@@ -20,7 +20,6 @@ const redirect = () => {
 
 const ResultPage = (props) => {
   const { result, started } = props;
-  const imgUrl = 'https://ra-test-images.s3.ap-northeast-1.amazonaws.com/sample.png';
   const texts = Results[result].containts.split('\n').map((item) => (
     <p key={item}>
       {item}
@@ -39,7 +38,7 @@ const ResultPage = (props) => {
           {`
           body {
             background-position: center center;
-            background-image: url(${imgUrl});
+            background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
