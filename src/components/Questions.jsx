@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
@@ -34,6 +34,7 @@ const Questions = (props) => {
         break;
     }
   };
+  const nodeRef = useRef(null);
 
   return (
     <>
@@ -43,6 +44,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => setShowMessages[1](true)}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={1}
@@ -60,6 +62,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => setShowMessages[2](true)}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={2}
@@ -77,6 +80,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => setShowMessages[3](true)}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={3}
@@ -94,6 +98,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => setShowMessages[4](true)}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={4}
@@ -111,6 +116,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => setShowMessages[5](true)}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={5}
@@ -128,6 +134,7 @@ const Questions = (props) => {
         classNames="question"
         unmountOnExit
         onExited={() => { diagnose(); }}
+        nodeRef={nodeRef}
       >
         <Question
           questionNumber={6}
