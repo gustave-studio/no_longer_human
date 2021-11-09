@@ -17,13 +17,13 @@ const Questions = (props) => {
       case trueOfAnswers === 0:
         history.push('/result1');
         break;
-      case trueOfAnswers <= 2:
+      case trueOfAnswers >= 2:
         history.push('/result2');
         break;
       case trueOfAnswers === 3:
         history.push('/result3');
         break;
-      case trueOfAnswers <= 5:
+      case trueOfAnswers >= 5:
         history.push('/result4');
         break;
       case trueOfAnswers === 6:
