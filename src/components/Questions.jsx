@@ -14,20 +14,20 @@ const Questions = (props) => {
   const history = useHistory();
   const diagnose = () => {
     switch (true) {
-      case trueOfAnswers === 0:
-        history.push('/result1');
+      case trueOfAnswers === 6:
+        history.push('/result5');
         break;
-      case trueOfAnswers >= 2:
-        history.push('/result2');
+      case trueOfAnswers >= 4:
+        history.push('/result4');
         break;
       case trueOfAnswers === 3:
         history.push('/result3');
         break;
-      case trueOfAnswers >= 5:
-        history.push('/result4');
+      case trueOfAnswers >= 2:
+        history.push('/result2');
         break;
-      case trueOfAnswers === 6:
-        history.push('/result5');
+      case trueOfAnswers === 0:
+        history.push('/result1');
         break;
       default:
         history.push('/result2');
