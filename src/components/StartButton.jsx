@@ -13,7 +13,7 @@ const StartButton = () => (
           <Stack spacing={2} direction="row">
             <Grid item container direction="column" spacing={0}>
               <Button
-                style={{ backgroundColor: '#ff1493', fontSize: '20px' }}
+                style={{ backgroundColor: '#ff1493', fontSize: '30px' }}
                 variant="contained"
                 component={Link}
                 to="/questions"

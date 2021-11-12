@@ -21,6 +21,7 @@ const SelectButton = (props) => {
     <>
       <Button
         variant="contained"
+        style={{ fontSize: '20px' }}
         onClick={() => {
           setAnswerButton();
           nextButton();
@@ -32,6 +33,7 @@ const SelectButton = (props) => {
       <br />
       <Button
         variant="outlined"
+        style={{ fontSize: '20px' }}
         onClick={() => {
           nextButton();
           setShowMessage(false);
@@ -42,34 +44,6 @@ const SelectButton = (props) => {
     </>
   );
 
-  // const ButtonToResult = () => (
-  //   <>
-  //     <Button
-  //       variant="contained"
-  //       onClick={() => {
-  //         setAnswerButton();
-  //         setShowMessage(false);
-  //       }}
-  //       component={Link}
-  //       to="/result"
-  //     >
-  //       はい
-  //     </Button>
-  //     <br />
-  //     <Button
-  //       variant="outlined"
-  //       onClick={() => {
-  //         nextButton();
-  //         setShowMessage(false);
-  //       }}
-  //       component={Link}
-  //       to="/result"
-  //     >
-  //       いいえ
-  //     </Button>
-  //   </>
-  // );
-
   return (
     <>
       <Grid container>
@@ -79,7 +53,6 @@ const SelectButton = (props) => {
             <Stack spacing={2} direction="row">
               <Grid item container direction="column" spacing={0}>
                 { ButtonToNextQuestion() }
-                {/* { (num === 3) ? ButtonToResult() : ButtonToNextQuestion() } */}
               </Grid>
             </Stack>
           </div>

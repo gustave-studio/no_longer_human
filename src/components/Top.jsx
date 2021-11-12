@@ -12,30 +12,34 @@ const Top = () => (
       <Helmet>
         <style>
           {`
-        body {
-          background-position: center center;
-          background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
-          background-attachment: fixed;
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-    `}
+            body {
+              background-position: top;
+              background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
+              background-size: cover;
+              background-size: 750px auto;
+              background-repeat: no-repeat;
+            }
+        `}
 
         </style>
       </Helmet>
     </HelmetProvider>
     <div className="container">
       <h1>
-        人間失格度から見る
+        太宰治の名作と共に見る
         <br />
-        太宰治診断
+        人間失格度診断
       </h1>
-      <p>Version 1.0.0 Tsuneko</p>
+      <p>第 1.0.0 版 「Tsuneko」</p>
 
       <div className="explanation">
         <Card sx={{ minWidth: 275 }}>
           <CardContent>
-            <Typography variant="h5" component="div">
+            <Typography
+              variant="string"
+              component="div"
+              style={{ fontSize: '18px' }}
+            >
               <div>
                 「人間失格」の主人公である大庭葉蔵に、あなたの性格がどの位似ているかを表す人間失格度を判定します。
                 <br />
