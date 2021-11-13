@@ -24,8 +24,13 @@
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
+
 .container {
-  margin-top: 200px;
+  background-position: top;
+  background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
+  background-size: cover;
+  background-size: 750px auto;
+  background-repeat: no-repeat;
 }
 
 .container h1 {
@@ -33,6 +38,7 @@
   color: #ffffff;
   font-size: 30px;
   text-align: center;
+  padding-top: 200px;
   margin-bottom: 50px;
 }
 
@@ -41,6 +47,7 @@
   color: #ffffff;
   font-size: 20px;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .container p {
@@ -66,7 +73,7 @@
 .explanation {
   width: 70%;
   /* position: absolute; */
-  margin: 0% 15%;
+  margin: 0% 15% ;
 }
 
 .container button {

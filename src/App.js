@@ -76,6 +76,22 @@ export default function App() {
     setShowMessage6,
   ];
 
+  const resetState = () => {
+    setNum(0);
+    setAnswerOfQuestion1(false);
+    setAnswerOfQuestion2(false);
+    setAnswerOfQuestion3(false);
+    setAnswerOfQuestion4(false);
+    setAnswerOfQuestion5(false);
+    setAnswerOfQuestion6(false);
+    setShowMessage1(true);
+    setShowMessage2(false);
+    setShowMessage3(false);
+    setShowMessage4(false);
+    setShowMessage5(false);
+    setShowMessage6(false);
+  };
+
   return (
     <BrowserRouter>
       <Route exact path="/">
@@ -84,9 +100,9 @@ export default function App() {
       <Route path="/questions">
         <div className="App">
           <h1>
-            人間失格度から見る
+            太宰治の名作と共に見る
             <br />
-            太宰治診断
+            人間失格度診断
           </h1>
 
           <Questions
@@ -101,19 +117,19 @@ export default function App() {
         </div>
       </Route>
       <Route path="/result1">
-        <ResultPage result="result1" />
+        <ResultPage result="result1" resetState={resetState} />
       </Route>
       <Route path="/result2">
-        <ResultPage result="result2" />
+        <ResultPage result="result2" resetState={resetState} />
       </Route>
       <Route path="/result3">
-        <ResultPage result="result3" />
+        <ResultPage result="result3" resetState={resetState} />
       </Route>
       <Route path="/result4">
-        <ResultPage result="result4" />
+        <ResultPage result="result4" resetState={resetState} />
       </Route>
       <Route path="/result5">
-        <ResultPage result="result5" />
+        <ResultPage result="result5" resetState={resetState} />
       </Route>
     </BrowserRouter>
   );

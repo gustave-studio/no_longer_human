@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -15,11 +14,11 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Results from '../Results';
 
 const ResultPage = (props) => {
-  const { result } = props;
+  const { result, resetState } = props;
   const texts = Results[result].containts.split('\n').map((item) => (
     <div key={item}>
       {item}
@@ -51,29 +50,15 @@ const ResultPage = (props) => {
         );
       default:
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B00FA4GG5E&linkId=16ddc97185f1683560f2e111a6901998&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4087520013&linkId=cbbd941b3083b520cfc462c72533e149&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
         );
     }
   };
 
+  const history = useHistory();
+
   return (
     <>
-      <HelmetProvider>
-        <Helmet>
-          <style>
-            {`
-          body {
-            background-position: center center;
-            background-image: url('https://no-longer-human.s3.ap-northeast-1.amazonaws.com/background.png');
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-          }
-      `}
-
-          </style>
-        </Helmet>
-      </HelmetProvider>
       <div className="container">
         <h1>{Results[result].title}</h1>
         <h2>{Results[result].class}</h2>
@@ -117,8 +102,10 @@ const ResultPage = (props) => {
                 <Button
                   style={{ backgroundColor: '#ff1493', fontSize: '20px' }}
                   variant="contained"
-                  component={Link}
-                  to="/"
+                  onClick={() => {
+                    resetState();
+                    history.push('/');
+                  }}
                 >
                   診断トップへ
                 </Button>
@@ -134,6 +121,7 @@ const ResultPage = (props) => {
 
 ResultPage.propTypes = {
   result: PropTypes.string.isRequired,
+  resetState: PropTypes.func.isRequired,
 };
 
 export default ResultPage;
