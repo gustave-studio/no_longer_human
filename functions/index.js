@@ -19,8 +19,8 @@ exports.resultOgTags1 = functions.https.onRequest((req, res) => {
 
 exports.resultOgTags2 = functions.https.onRequest((req, res) => {
   const ogTags = '<meta name="twitter:card" content="summary_large_image"></meta>'
-    + '<meta property="og:title" content="人間失格度25% 「御伽草子」級" />'
-    + '<meta property="og:description" content="人間失格度25%のあなたは「御伽草子」級の人間です！御伽草子は、昔話を太宰流に想像を膨らませてリメイクした昔話パロディ作品です。この昔話そんな話じゃないだろ！とツッコミながら笑ってしまいます。パロディ短編の詰め合わせで読みやすいので、ぜひ読んでみて下さい" />'
+    + '<meta property="og:title" content="人間失格度25% 「お伽草子」級" />'
+    + '<meta property="og:description" content="人間失格度25%のあなたは「お伽草子」級の人間です！お伽草子は、昔話を太宰流に想像を膨らませてリメイクした昔話パロディ作品です。この昔話そんな話じゃないだろ！とツッコミながら笑ってしまいます。パロディ短編の詰め合わせで読みやすいので、ぜひ読んでみて下さい" />'
     + '<meta property="og:image" content="https://no-longer-human.s3.ap-northeast-1.amazonaws.com/result2.png" />';
   const htmlFile = fs.readFileSync(path.join(__dirname, './index.html'));
   const html = htmlFile.toString().replace('</head>', `${ogTags}</head>`);
@@ -49,8 +49,8 @@ exports.resultOgTags4 = functions.https.onRequest((req, res) => {
 
 exports.resultOgTags5 = functions.https.onRequest((req, res) => {
   const ogTags = '<meta name="twitter:card" content="summary_large_image"></meta>'
-    + '<meta property="og:title" content="人間失格度100%のあなたは、「人間失格」の主人公「大庭葉蔵」に共感出来るかもしれません！\n「人間失格」は、太宰治の人生が反映されていると言われており、太宰治の人生の切り売りとも言える小説です。\n日本人に長く愛されている名作なので、ぜひ読んでみて下さい。" />'
-    + '<meta property="og:description" content="人間失格度100%のあなたは、「人間失格」の主人公「大庭葉蔵」に共感出来るかもしれません！\n「人間失格」は、太宰治の人生が反映されていると言われており、太宰治の人生の切り売りとも言える小説です。\n日本人に長く愛されている名作なので、ぜひ読んでみて下さい。" />'
+    + '<meta property="og:title" content="人間失格度100% 「人間失格」級" />'
+    + '<meta property="og:description" content="人間失格度100%のあなたは、「人間失格」の主人公「大庭葉蔵」に共感出来るかもしれません！「人間失格」は、太宰治の人生が反映されていると言われており、太宰治の人生の切り売りとも言える小説です。日本人に長く愛されている名作なので、ぜひ読んでみて下さい。" />'
     + '<meta property="og:image" content="https://no-longer-human.s3.ap-northeast-1.amazonaws.com/result5.png" />';
   const htmlFile = fs.readFileSync(path.join(__dirname, './index.html'));
   const html = htmlFile.toString().replace('</head>', `${ogTags}</head>`);
