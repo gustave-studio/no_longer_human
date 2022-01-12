@@ -29,28 +29,51 @@ const ResultPage = (props) => {
     switch (result) {
       case 'result1':
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4101006067&linkId=5a0dc653dc9ac7961c4bffa2e4408e2b&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4101006067">
+              <p>走れメロスをAmazonで見る</p>
+            </a>
+          </div>
         );
       case 'result2':
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4101006075&linkId=1ba564822a40f9269233aebc00f29fca&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4101006075">
+              <p>お伽草子をAmazonで見る</p>
+            </a>
+          </div>
         );
       case 'result3':
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4041099153&linkId=11a553ab9d354496396890f0be5c4a45&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4041099153">
+              <p>女生徒をAmazonで見る</p>
+            </a>
+          </div>
         );
-
       case 'result4':
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4101006032&linkId=f77b9d132dafbc06dbd20161a13a0c12&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4101006032">
+              <p>ヴィヨンの妻をAmazonで見る</p>
+            </a>
+          </div>
         );
       case 'result5':
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4087520013&linkId=ff30a8b06e356452a90b78e5c88f448a&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4087520013">
+              <p>人間失格をAmazonで見る</p>
+            </a>
+          </div>
         );
       default:
         return (
-          <iframe title="advertisement" className="advertisement" style={{ width: '120px', height: '240px' }} marginWidth="0" marginHeight="0" scrolling="no" frameBorder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=gustave02-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4087520013&linkId=cbbd941b3083b520cfc462c72533e149&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr" />
+          <div>
+            <a href="https://www.amazon.co.jp/dp/4087520013">
+              <p>人間失格をAmazonで見る</p>
+            </a>
+          </div>
         );
     }
   };
