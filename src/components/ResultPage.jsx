@@ -29,49 +29,61 @@ const ResultPage = (props) => {
     switch (result) {
       case 'result1':
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4101006067">
-              <p>走れメロスをAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4101006067.09.MZZZZZZZ" alt="走れメロス" />
+              <br />
+              走れメロスをAmazonで見る
             </a>
           </div>
         );
       case 'result2':
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4101006075">
-              <p>お伽草子をAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4101006075.09.MZZZZZZZ" alt="お伽草子" />
+              <br />
+              お伽草子をAmazonで見る
             </a>
           </div>
         );
       case 'result3':
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4041099153">
-              <p>女生徒をAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4041099153.09.MZZZZZZZ" alt="女生徒" />
+              <br />
+              女生徒をAmazonで見る
             </a>
           </div>
         );
       case 'result4':
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4101006032">
-              <p>ヴィヨンの妻をAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4101006032.09.MZZZZZZZ" alt="ヴィヨンの妻" />
+              <br />
+              ヴィヨンの妻をAmazonで見る
             </a>
           </div>
         );
       case 'result5':
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4087520013">
-              <p>人間失格をAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4087520013.09.MZZZZZZZ" alt="人間失格" />
+              <br />
+              人間失格をAmazonで見る
             </a>
           </div>
         );
       default:
         return (
-          <div>
+          <div className="book_image">
             <a href="https://www.amazon.co.jp/dp/4087520013">
-              <p>人間失格をAmazonで見る</p>
+              <img src="https://images-na.ssl-images-amazon.com/images/P/4087520013.09.MZZZZZZZ" alt="人間失格" />
+              <br />
+              人間失格をAmazonで見る
             </a>
           </div>
         );

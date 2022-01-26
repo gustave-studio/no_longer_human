@@ -93,6 +93,10 @@
   margin: 5% 0%;
 }
 
+.book_image {
+  text-align: center;
+}
+
 .Button {
   font-size: 30px;
 }
